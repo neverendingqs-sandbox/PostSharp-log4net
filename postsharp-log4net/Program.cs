@@ -11,8 +11,17 @@ namespace postsharp_log4net
         static void Main(string[] args)
         {
             Foo f = new Foo();
-            f.DoSomething();
-            f.DoSomethingElse();
+            f.DoSomething("First call");
+            f.DoSomethingElse("Second call");
+
+            /*  Output
+                DEBUG postsharp_log4net.Foo - Entering: Foo.DoSomething(this = {postsharp_log4net.Foo}, "First call")
+                INFO  postsharp_log4net.Foo - Doing something: First call
+                DEBUG postsharp_log4net.Foo - Leaving: Foo.DoSomething(this = {postsharp_log4net.Foo}, "First call")
+                DEBUG postsharp_log4net.Foo - Entering: Foo.DoSomethingElse(this = {postsharp_log4net.Foo}, "Second call")
+                INFO  postsharp_log4net.Foo - Doing something else: Second call
+                DEBUG postsharp_log4net.Foo - Leaving: Foo.DoSomethingElse(this = {postsharp_log4net.Foo}, "Second call")
+             */
 
             Console.In.Read();
         }

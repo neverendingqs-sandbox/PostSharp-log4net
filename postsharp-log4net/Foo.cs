@@ -14,15 +14,15 @@ namespace postsharp_log4net
         private static readonly ILog _logger = LogManager.GetLogger(typeof(Foo));
 
         [Log]
-        internal void DoSomething()
+        internal void DoSomething(string message)
         {
-            _logger.Info("Doing something");
+            _logger.InfoFormat("Doing something: {0}", message);
         }
 
         [Log]
-        internal void DoSomethingElse()
+        internal void DoSomethingElse(string message)
         {
-            _logger.Info("Doing something else");
+            _logger.InfoFormat("Doing something else: {0}", message);
         }
     }
 }
