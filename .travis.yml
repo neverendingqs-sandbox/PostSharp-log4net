@@ -1,0 +1,2 @@
+language: csharp
+solution: postsharp-log4net.sln
